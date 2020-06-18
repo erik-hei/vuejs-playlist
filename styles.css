@@ -1,0 +1,17 @@
+body {
+    font-family: Verdana;
+}
+h1 {
+    font-family: Georgia;
+}
+#canvas {
+    width: 600px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid chartreuse;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}

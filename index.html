@@ -2,10 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>cli-project</title>
+    <title>VueJS Tutorial</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="/dist/build.js"></script>
+    <div id="vue-app">
+      <div class="row">
+        <div>
+          <h1>Basics</h1>
+          <h3>{{ greet('evening') }}</h3>
+          <p>Name: {{ name }}</p>
+          <p>Job: {{ job }}</p>
+          <a v-bind:href="website">Check out my portfolio</a>
+          <p>
+            <input type="text" v-bind:value="name" />
+          </p>
+          <p v-html="websiteTag"></p>
+        </div>
+        <div>
+          <h1>Events</h1>
+          <p>My age is
+            <button v-on:click="subtract(10)">-10</button>
+            <button v-on:click="subtract(1)">-1</button>
+            {{ age }} years 
+            <button v-on:click="age++">+1</button>
+            <button v-on:click="age+=10">+10</button>
+          </p>
+          <div id="canvas" @mousemove="updateXY" @click="click">
+            {{ x }}, {{ y }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <h1>Keyboard Events</h1>
+          <label>Name:</label>
+          <input type="text" @keyup.enter="logName" />
+          <label>Age:</label>
+          <input type="text" @keyup.alt.enter="logAge" />
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
