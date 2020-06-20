@@ -5,9 +5,21 @@ new Vue({
         job: 'TA at General Assembly',
         website: 'https://erik-hei.github.io',
         websiteTag: '<a href="https://erik-hei.github.io">My Portfolio</a>',
-        age: '25',
+        age: 25,
         x: 0,
-        y: 0
+        y: 0,
+        a: 0,
+        b: 0,
+        available: false,
+        nearby: false,
+        error: false,
+        success: false,
+        characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+        ninjas: [
+            { name: 'Ryu', age: 25 },
+            { name: 'Yoshi', age: 35 },
+            { name: 'Ken', age: 55 }
+        ]
     },
     methods: {
         greet: function(time) {
@@ -29,6 +41,21 @@ new Vue({
         },
         logAge: function() {
             console.log('you entered your age');
+            console.log(parseInt(age))
+        }
+    },
+    computed: {
+        addToA: function() {
+            return this.a + this.age;
+        },
+        addToB: function () {
+            return this.b + this.age;
+        },
+        compClasses: function() {
+            return {
+                available: this.available,
+                nearby: this.nearby
+            }
         }
     }
 });

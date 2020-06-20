@@ -15,3 +15,20 @@ h1 {
     flex-direction: row;
     justify-content: space-evenly
 }
+.taxi-driver {
+    background: red;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.available {
+    background: green;
+}
+
+.nearby:after {
+    content: "nearby";
+    margin-left: 10px;
+}
